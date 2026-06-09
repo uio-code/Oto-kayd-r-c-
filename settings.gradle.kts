@@ -1,4 +1,3 @@
-// Android projesinin kök yapılandırması. Gerekli kütüphane depolarını tanımlar.
 pluginManagement {
     repositories {
         google()
@@ -6,6 +5,7 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -13,5 +13,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
 rootProject.name = "AutoSwiper"
 include(":app")
