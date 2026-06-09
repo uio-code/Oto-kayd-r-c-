@@ -1,5 +1,3 @@
-# Bu dosya, GitHub sunucularına projenizi nasıl derleyeceğini söyler.
-# Tamamen ücretsiz olan GitHub Actions v4 (Güncel) altyapısını kullanır.
 name: Android CI/CD Build
 
 on:
@@ -20,8 +18,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Gradle Ortamını Hazırla
+    - name: Stabil Gradle 8.4'ü Kur
       uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.4'
 
     - name: APK'yı Derle (Build)
       run: gradle assembleDebug
