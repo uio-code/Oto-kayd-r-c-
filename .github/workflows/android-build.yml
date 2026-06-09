@@ -1,3 +1,5 @@
+# Bu dosya, GitHub sunucularına projenizi nasıl derleyeceğini söyler.
+# Tamamen ücretsiz olan GitHub Actions v4 (Güncel) altyapısını kullanır.
 name: Android CI/CD Build
 
 on:
@@ -10,22 +12,22 @@ jobs:
 
     steps:
     - name: Depoyu Klonla
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Java JDK 17 Kurulumu
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
 
     - name: Gradle Ortamını Hazırla
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/actions/setup-gradle@v3
 
     - name: APK'yı Derle (Build)
       run: gradle assembleDebug
 
     - name: Derlenen APK'yı Çıktı Olarak Ver
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Falsolu-Swiper-APK
         path: app/build/outputs/apk/debug/app-debug.apk
